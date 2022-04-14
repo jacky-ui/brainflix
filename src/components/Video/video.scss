@@ -23,3 +23,23 @@
         padding-right: 5rem;
     }
 }
+
+.video__details {
+    @include mixins.mobile-padding;
+
+    @include mixins.tablet {
+        @include mixins.tablet-padding;
+    }
+    @include mixins.desktop {
+        @include mixins.desktop-padding;
+    }
+    &--title {
+        @include mixins.mobile-pgheader;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-pgheader;
+        }
+    }
+}

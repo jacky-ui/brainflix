@@ -33,4 +33,34 @@
     padding-left: 5rem;
     padding-right: 5rem;
   }
+}
+
+.video__details {
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .video__details {
+    padding: 1rem 2.25rem 1rem 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .video__details {
+    padding: 1.5rem 5rem 1.5rem 5rem;
+  }
+}
+.video__details--title {
+  font-family: "AvenirNext";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+@media screen and (min-width: 768px) {
+  .video__details--title {
+    font-family: "AvenirNext";
+    font-size: 2.06rem;
+    line-height: 2.75rem;
+    font-weight: bold;
+  }
 }/*# sourceMappingURL=video.css.map */
