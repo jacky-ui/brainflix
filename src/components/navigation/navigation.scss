@@ -1,6 +1,11 @@
+@use '../../styles/partials/_typography';
 @use '../../styles/partials/_mixins';
 @use '../../styles/partials/colors-variables';
-@use '../../styles/partials/typography';
+
+*::-webkit-input-placeholder {
+    color: colors-variables.$primary-color1;
+    @include mixins.mobile-button-label;
+}
 
 .navigation {
     @include mixins.mobile-padding;
@@ -62,14 +67,14 @@
             width: auto;
             text-align: center;
             border-radius: 4px;
-            margin-top: 1rem;
-            // @include mixins.mobile-button-label;
+            @include mixins.mobile-button-label;
 
             @include mixins.tablet {
                 width: 10rem;
                 margin-right: 4rem;
                 padding-top: 0.7rem;
                 padding-bottom: 0.7rem;
+                margin-top: 1rem;
             }
         }
     }
@@ -110,7 +115,7 @@ input[type=file]{
     left: 0.5rem;
 
     @include mixins.tablet {
-        top: 1.6rem;
+        top: 1.5rem;
         left: auto;
         right: 12rem;
     }

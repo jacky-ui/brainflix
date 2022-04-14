@@ -1,6 +1,7 @@
 @use './typography';
 @use './colors-variables';
 
+
 // Mobile font mixins
 @mixin mobile-pgheader {
     font-family: 'AvenirNext';
@@ -31,7 +32,7 @@
 }
 
 @mixin mobile-button-label {
-    font-family: 'AvenirNext';
+    font-family:'AvenirNext';
     font-size: 0.75rem;
     line-height: 1.125rem;
     font-weight: 700;

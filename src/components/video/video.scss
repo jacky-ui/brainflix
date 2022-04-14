@@ -1,0 +1,15 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+@use '../../styles/partials/colors-variables';
+
+.video {
+    // @include mixins.mobile-padding;
+
+    // &__container {
+
+    // }
+    &__main {
+        width: 100vw;
+        height: auto;
+    }
+}
