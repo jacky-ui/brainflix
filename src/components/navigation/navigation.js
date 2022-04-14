@@ -7,6 +7,7 @@ import profileImage from '../../assets/Images/Mohan-muruge.jpg';
 
 function Navigation() {
     return (
+        <header>
             <section className="navigation">
                 <a className="navigation__logo" href='./App.js'>
                     <img 
@@ -41,6 +42,7 @@ function Navigation() {
                     />
                 </div>
             </section>
+        </header>
     );
 }
 

@@ -63,13 +63,14 @@
             text-align: center;
             border-radius: 4px;
             margin-top: 1rem;
-            // @include mixins.mobile-button-label;
+            @include mixins.mobile-button-label;
 
             @include mixins.tablet {
                 width: 10rem;
                 margin-right: 4rem;
                 padding-top: 0.7rem;
                 padding-bottom: 0.7rem;
+                @include mixins.desk-tab-labelsbtn;
             }
         }
     }
@@ -85,7 +86,7 @@
         height: 2.25rem;
         width: 2.25rem;
         position: absolute;
-        bottom: 3.6rem;
+        bottom: 4.4rem;
         top: auto;
         right: 0rem;
         left: auto;
@@ -106,11 +107,11 @@ input[type=file]{
 .icon__upload {
     position: absolute;
     // background-color: black;
-    top: 5rem;
+    top: 5.6rem;
     left: 0.5rem;
 
     @include mixins.tablet {
-        top: 1.6rem;
+        top: 1.5rem;
         left: auto;
         right: 12rem;
     }
@@ -118,11 +119,11 @@ input[type=file]{
 
 .icon__search {
     position: absolute;
-    top: 1.7rem;
+    top: 1.5rem;
     right: auto;
     left: 0.5rem;
 
     @include mixins.tablet {
-        top: 1.8rem;
+        top: 1.7rem;
     }
 }

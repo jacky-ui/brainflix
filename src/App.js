@@ -1,11 +1,13 @@
 import './App.scss';
-import Navigation from './components/navigation/Navigation.js';
+import Navigation from './components/navigation/navigation.js';
+import Video from './components/Video/Video';
 
 function App() {
   return (
     <>
       <Navigation />
-      <h1>Hello World</h1>
+      <Video />
+      
     </>
   );
 }

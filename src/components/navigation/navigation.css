@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "AvenirNext LT Pro";
+  font-family: "AvenirNext";
   src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "AvenirNext LT Pro";
+  font-family: "AvenirNext";
   src: url("../../assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
@@ -77,6 +77,10 @@
   text-align: center;
   border-radius: 4px;
   margin-top: 1rem;
+  font-family: "AvenirNext";
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .navigation__file--label {
@@ -84,6 +88,10 @@
     margin-right: 4rem;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
+    font-family: "AvenirNext";
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: bold;
   }
 }
 .navigation__div {
@@ -99,7 +107,7 @@
   height: 2.25rem;
   width: 2.25rem;
   position: absolute;
-  bottom: 3.6rem;
+  bottom: 4.4rem;
   top: auto;
   right: 0rem;
   left: auto;
@@ -118,12 +126,12 @@ input[type=file] {
 
 .icon__upload {
   position: absolute;
-  top: 5rem;
+  top: 5.6rem;
   left: 0.5rem;
 }
 @media screen and (min-width: 768px) {
   .icon__upload {
-    top: 1.6rem;
+    top: 1.5rem;
     left: auto;
     right: 12rem;
   }
@@ -131,12 +139,12 @@ input[type=file] {
 
 .icon__search {
   position: absolute;
-  top: 1.7rem;
+  top: 1.5rem;
   right: auto;
   left: 0.5rem;
 }
 @media screen and (min-width: 768px) {
   .icon__search {
-    top: 1.8rem;
+    top: 1.7rem;
   }
 }/*# sourceMappingURL=navigation.css.map */

@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@media screen and (min-width: 768px) {
+  .video__container {
+    background-color: #000000;
+  }
+}
+
+.video__main {
+  width: 100vw;
+  height: auto;
+}
+@media screen and (min-width: 768px) {
+  .video__main {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .video__main {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}/*# sourceMappingURL=video.css.map */
