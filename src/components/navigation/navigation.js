@@ -7,42 +7,40 @@ import profileImage from '../../assets/Images/Mohan-muruge.jpg';
 
 function Navigation() {
     return (
-        <header>
-            <section className="navigation">
-                <a className="navigation__logo" href='./App.js'>
+        <nav  className="navigation">
+            <a className="navigation__logo" href='./App.js'>
+                <img 
+                src={siteLogo}
+                alt="Brainflix"
+                />
+            </a>
+            <div className="navigation__div">
+                <input type="text" id="search" name="search" className="navigation__input" placeholder='Search'></input>
+                <img
+                className="icon__search" 
+                src={searchIcon}
+                alt="search"
+                />
+
+                <div>
+                    <form>
+                        <label htmlFor="uploadFile" className="navigation__file--label">UPLOAD</label>
+                        <input type="file" id="uploadFile" name="uploadFile" className="navigation__file"></input>
+                    </form>
+
                     <img 
-                    src={siteLogo}
-                    alt="Brainflix"
-                    />
-                </a>
-                <div className="navigation__div">
-                    <input type="text" id="search" name="search" className="navigation__input" placeholder='Search'></input>
-                    <img
-                    className="icon__search" 
-                    src={searchIcon}
-                    alt="search"
-                    />
-
-                    <div>
-                        <form>
-                            <label htmlFor="uploadFile" className="navigation__file--label">UPLOAD</label>
-                            <input type="file" id="uploadFile" name="uploadFile" className="navigation__file"></input>
-                        </form>
-
-                        <img 
-                        className="navigation__profile"
-                        src={profileImage}
-                        alt="User profile"
-                        />
-                    </div>
-                    <img
-                    className='icon__upload' 
-                    src={uploadIcon}
-                    alt="upload"
+                    className="navigation__profile"
+                    src={profileImage}
+                    alt="User profile"
                     />
                 </div>
-            </section>
-        </header>
+                <img
+                className='icon__upload' 
+                src={uploadIcon}
+                alt="upload"
+                />
+            </div>
+        </nav>
     );
 }
 

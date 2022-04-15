@@ -37,9 +37,68 @@
         @include mixins.mobile-pgheader;
         margin-top: 0rem;
         margin-bottom: 0rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid colors-variables.$primary-color3;
 
         @include mixins.tablet {
             @include mixins.desk-tab-pgheader;
+            padding-bottom: 2rem;
         }
+    }
+    &--comments {
+        display: flex;
+        justify-content: space-between;
+        position: relative; 
+        border-bottom: 1px solid colors-variables.$primary-color3;    
+
+        @include mixins.tablet {
+            bottom: 2.5rem;
+            border: none;
+        }
+    }
+    &--channel {
+        @include mixins.mobile-body;
+        color: colors-variables.$primary-color3;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-body;
+            display: flex;
+        }
+    }
+    &--bold {
+        font-weight: 700;
+        color: colors-variables.$secondary-color1;
+
+        @include mixins.tablet {
+            margin-right: 1rem;
+        }
+    }
+    &--paragraph {
+        @include mixins.tablet {
+            margin-right: 3rem;
+        }
+    }
+}
+
+// Like and views icon
+.icon__views {
+    position: absolute;
+    bottom: 2.9rem;
+    right: 4rem;
+
+    @include mixins.tablet {
+        bottom: 1.1rem;
+        right: 10.5rem;
+    }
+}
+
+.icon__likes {
+    position: absolute;
+    bottom: 1rem;
+    right: 4rem;
+
+    @include mixins.tablet {
+        bottom: 1rem;
+        right: 3.5rem;
     }
 }
