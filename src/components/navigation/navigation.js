@@ -1,16 +1,16 @@
 import './navigation.scss';
 // Image/Icon imports
-import siteLogo from '../../assets/Logo/BrainFlix-logo.svg';
+import SiteLogo from '../../assets/Logo/BrainFlix-logo.svg';
 import uploadIcon from '../../assets/Icons/upload.svg';
-import searchIcon from '../../assets/Icons/search.svg';
-import profileImage from '../../assets/Images/Mohan-muruge.jpg';
+import SearchIcon from '../../assets/Icons/search.svg';
+import ProfileImage from '../../assets/Images/Mohan-muruge.jpg';
 
 function Navigation() {
     return (
         <nav  className="navigation">
             <a className="navigation__logo" href='./App.js'>
                 <img 
-                src={siteLogo}
+                src={SiteLogo}
                 alt="Brainflix"
                 />
             </a>
@@ -18,7 +18,7 @@ function Navigation() {
                 <input type="text" id="search" name="search" className="navigation__input" placeholder='Search'></input>
                 <img
                 className="icon__search" 
-                src={searchIcon}
+                src={SearchIcon}
                 alt="search"
                 />
 
@@ -30,7 +30,7 @@ function Navigation() {
 
                     <img 
                     className="navigation__profile"
-                    src={profileImage}
+                    src={ProfileImage}
                     alt="User profile"
                     />
                 </div>

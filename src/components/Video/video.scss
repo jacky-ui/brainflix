@@ -2,80 +2,142 @@
 @use '../../styles/partials/colors-variables';
 @use '../../styles/partials/typography';
 
-.video__container {
+// Styling of placeholder text within comments
+*::placeholder {
+    color: colors-variables.$secondary-color1;
+    @include mixins.mobile-body;
+}
 
+.video {
+    &__container {
     @include mixins.tablet {
         background-color: colors-variables.$secondary-color1;
-    }
-}
-
-.video__main {
-    width: 100vw;
-    height: auto;
-    // aspect-ratio: 16/9;
-
-    @include mixins.tablet {
-        padding-left: 2.25rem;
-        padding-right: 2.25rem;
-    }
-    @include mixins.desktop {
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
-}
-
-.video__details {
-    @include mixins.mobile-padding;
-
-    @include mixins.tablet {
-        @include mixins.tablet-padding;
-    }
-    @include mixins.desktop {
-        @include mixins.desktop-padding;
-    }
-    &--title {
-        @include mixins.mobile-pgheader;
-        margin-top: 0rem;
-        margin-bottom: 0rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid colors-variables.$primary-color3;
-
-        @include mixins.tablet {
-            @include mixins.desk-tab-pgheader;
-            padding-bottom: 2rem;
         }
     }
-    &--comments {
-        display: flex;
-        justify-content: space-between;
-        position: relative; 
-        border-bottom: 1px solid colors-variables.$primary-color3;    
+    &__main {
+        width: 100vw;
+        height: auto;
+        // aspect-ratio: 16/9;
 
         @include mixins.tablet {
-            bottom: 2.5rem;
-            border: none;
+            padding-left: 2.25rem;
+            padding-right: 2.25rem;
+        }
+        @include mixins.desktop {
+            padding-left: 5rem;
+            padding-right: 5rem;
         }
     }
-    &--channel {
+    &__details {
+        @include mixins.mobile-padding;
+
+            @include mixins.tablet {
+                @include mixins.tablet-padding;
+            }
+
+            @include mixins.desktop {
+                @include mixins.desktop-padding;
+            }
+
+        &--title {
+            @include mixins.mobile-pgheader;
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid colors-variables.$primary-color3;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-pgheader;
+                padding-bottom: 2rem;
+            }
+        }
+        &--comments {
+            display: flex;
+            justify-content: space-between;
+            position: relative; 
+            border-bottom: 1px solid colors-variables.$primary-color3;    
+
+            @include mixins.tablet {
+                bottom: 2.5rem;
+                border: none;
+            }
+        }
+        &--channel {
+            @include mixins.mobile-body;
+            color: colors-variables.$primary-color3;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-body;
+                display: flex;
+            }
+        }
+        &--bold {
+            font-weight: 700;
+            color: colors-variables.$secondary-color1;
+
+            @include mixins.tablet {
+            margin-right: 1rem;
+            }
+        }
+        &--paragraph {
+            @include mixins.tablet {
+            margin-right: 3rem;
+            }
+        }
+    }
+    &__description {
         @include mixins.mobile-body;
-        color: colors-variables.$primary-color3;
 
         @include mixins.tablet {
             @include mixins.desk-tab-body;
-            display: flex;
+            margin-top: -2rem;
         }
     }
-    &--bold {
-        font-weight: 700;
-        color: colors-variables.$secondary-color1;
+    &__comments {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: flex-end;
 
-        @include mixins.tablet {
-            margin-right: 1rem;
+        // Profile sizing in comments
+        &--profile {
+            border-radius: 50%;
+            width: 2.25rem;
+            height: 2.25rem;
+            position: absolute;
+            left: 0rem;
         }
-    }
-    &--paragraph {
-        @include mixins.tablet {
-            margin-right: 3rem;
+        // Comment upload section
+        &--header {
+            @include mixins.mobile-body;
+            font-weight: 700;
+            color: colors-variables.$primary-color3;
+            align-self: center;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-body;
+            }
+        }
+        &--textarea {
+            height: 5rem;
+            width: 80%;
+            padding-bottom: 3rem;
+            padding-left: 1rem;
+        }
+        &--submit {
+            background-color: colors-variables.$primary-color2;
+            color: colors-variables.$primary-color4;
+            @include mixins.mobile-button-label;
+            height: 2.5rem;
+            width: 80%;
+            margin-top: 1rem;
+            border-radius: 4px;
+            border: 1px solid colors-variables.$primary-color2;
+
+            &:hover {
+                cursor: pointer;
+                background-color: colors-variables.$secondary-color2;
+            }
         }
     }
 }
@@ -101,4 +163,11 @@
         bottom: 1rem;
         right: 3.5rem;
     }
+}
+
+.icon__comment {
+    position: absolute;
+    background-color: black;
+    left: 4.2rem;
+    bottom: 0.5rem;
 }

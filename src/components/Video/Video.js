@@ -3,6 +3,8 @@ import JsonVideo from '../../assets/Data/videos.json';
 import JsonVideoData from '../../assets/Data/video-details.json';
 import ViewsIcon from '../../assets/Icons/views.svg';
 import LikesIcon from '../../assets/Icons/likes.svg';
+import CommentIcon from '../../assets/Icons/add_comment.svg';
+import ProfileImage from '../../assets/Images/Mohan-muruge.jpg';
 import './video.css';
 
 const firstVideo = JsonVideo[0];
@@ -50,7 +52,30 @@ function CreateVideo() {
                             alt=""
                         />
                     </div>
-                </section>
+                    </section>
+                    <section>
+                        <p className="video__description">{firstVideoData.description}</p>
+                        <p className="video__details--bold">3 Comments</p>
+
+                        <div className="video__comments">
+                            <img
+                            className="video__comments--profile" 
+                            src={ProfileImage}
+                            />
+                            
+                            <label className="video__comments--header">JOIN THE CONVERSATION</label>
+                            <input
+                                className="video__comments--textarea" 
+                                type="textarea"
+                                placeholder='Add a new comment'
+                            />
+                            <button type='submit' className="video__comments--submit">COMMENT</button>
+                            <img
+                                className="icon__comment" 
+                                src={CommentIcon}
+                            />
+                        </div>
+                    </section>
             </section>
         </article>
         </>

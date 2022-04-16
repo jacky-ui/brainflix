@@ -76,11 +76,14 @@
   width: auto;
   text-align: center;
   border-radius: 4px;
-  margin-top: 1rem;
   font-family: "AvenirNext";
   font-size: 0.75rem;
   line-height: 1.125rem;
   font-weight: 700;
+}
+.navigation__file--label:hover {
+  background-color: #0065AD;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
   .navigation__file--label {
@@ -92,6 +95,7 @@
     font-size: 0.75rem;
     line-height: 1.25rem;
     font-weight: bold;
+    margin-top: 1rem;
   }
 }
 .navigation__div {
@@ -126,7 +130,7 @@ input[type=file] {
 
 .icon__upload {
   position: absolute;
-  top: 5.6rem;
+  top: 4.6rem;
   left: 0.5rem;
 }
 @media screen and (min-width: 768px) {

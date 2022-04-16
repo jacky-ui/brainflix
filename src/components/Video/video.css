@@ -12,12 +12,33 @@
   font-style: normal;
   font-display: swap;
 }
+*::-moz-placeholder {
+  color: #000000;
+  font-family: "AvenirNext";
+  font-size: 0.82rem;
+  line-height: 1.12rem;
+  font-weight: normal;
+}
+*:-ms-input-placeholder {
+  color: #000000;
+  font-family: "AvenirNext";
+  font-size: 0.82rem;
+  line-height: 1.12rem;
+  font-weight: normal;
+}
+*::placeholder {
+  color: #000000;
+  font-family: "AvenirNext";
+  font-size: 0.82rem;
+  line-height: 1.12rem;
+  font-weight: normal;
+}
+
 @media screen and (min-width: 768px) {
   .video__container {
     background-color: #000000;
   }
 }
-
 .video__main {
   width: 100vw;
   height: auto;
@@ -34,7 +55,6 @@
     padding-right: 5rem;
   }
 }
-
 .video__details {
   padding: 1rem;
 }
@@ -109,6 +129,74 @@
     margin-right: 3rem;
   }
 }
+.video__description {
+  font-family: "AvenirNext";
+  font-size: 0.82rem;
+  line-height: 1.12rem;
+  font-weight: normal;
+}
+@media screen and (min-width: 768px) {
+  .video__description {
+    font-family: "AvenirNext";
+    font-size: 0.87rem;
+    line-height: 1.375rem;
+    font-weight: normal;
+    margin-top: -2rem;
+  }
+}
+.video__comments {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-end;
+}
+.video__comments--profile {
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  position: absolute;
+  left: 0rem;
+}
+.video__comments--header {
+  font-family: "AvenirNext";
+  font-size: 0.82rem;
+  line-height: 1.12rem;
+  font-weight: normal;
+  font-weight: 700;
+  color: #AFAFAF;
+  align-self: center;
+}
+@media screen and (min-width: 768px) {
+  .video__comments--header {
+    font-family: "AvenirNext";
+    font-size: 0.87rem;
+    line-height: 1.375rem;
+    font-weight: normal;
+  }
+}
+.video__comments--textarea {
+  height: 5rem;
+  width: 80%;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+}
+.video__comments--submit {
+  background-color: #0095FF;
+  color: #FFFFFF;
+  font-family: "AvenirNext";
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  height: 2.5rem;
+  width: 80%;
+  margin-top: 1rem;
+  border-radius: 4px;
+  border: 1px solid #0095FF;
+}
+.video__comments--submit:hover {
+  cursor: pointer;
+  background-color: #0065AD;
+}
 
 .icon__views {
   position: absolute;
@@ -132,4 +220,11 @@
     bottom: 1rem;
     right: 3.5rem;
   }
+}
+
+.icon__comment {
+  position: absolute;
+  background-color: black;
+  left: 4.2rem;
+  bottom: 0.5rem;
 }/*# sourceMappingURL=video.css.map */
