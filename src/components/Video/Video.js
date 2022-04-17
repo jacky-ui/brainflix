@@ -1,27 +1,34 @@
 // Imports
+import React from 'react';
 import JsonVideo from '../../assets/Data/videos.json';
-import JsonVideoData from '../../assets/Data/video-details.json';
+import JsonVideoDatas from '../../assets/Data/video-details.json';
 import './video.css';
 import CreateComments from '../Comments/comments.js';
 import SideVideos from '../SideVideos/SideVideos.js';
 import { render } from '@testing-library/react';
+// import '../SideVideos/SideVideos.css';
 
-const VideoData = JsonVideo;
+const VideoDatas = JsonVideo;
 const firstVideo = JsonVideo[0];
 const firstVideoPicture = firstVideo.image;
-const firstVideoData = JsonVideoData[0];
+const firstVideoData = JsonVideoDatas[0];
 const firstVideoComments = firstVideoData.comments[0];
+
+const sideVideos = JsonVideoDatas;
 // console.log(firstVideoData);
-// console.log(firstVideoComments);
 
-console.log(VideoData);
+// class CreateVideo extends React.Component {
+    // state = {
+    //     VideoDatas: VideoDatas,
+    //     initialVideo: VideoDatas[0]
+    // }
 
-class CreateVideo extends Component {
-    state = {
-        VideoData: Video
-    }
+    // userClickHandler = (id) => {
+    //     const matchVideo = VideoDatas.find(VideoData => VideoData.id === id)
+    //     this.setState({initialVideo: matchVideo})
+    // };
+function CreateVideo() {
 
-    render() {
         return(
             <>
             {/* Current video display */}
@@ -35,12 +42,22 @@ class CreateVideo extends Component {
                 <section className="noname">
                     {/* Import past comments */}
                     <CreateComments />
+
+                    <section className="side">
+                    <h2 className="side__title">NEXT VIDEOS</h2>
                     {/* Videos user can select from on the side */}
-                    <SideVideos />
+                    {sideVideos.map((sideVideo) => (
+                        <SideVideos 
+                            key={sideVideo.id}
+                            title={sideVideo.title}
+                            channel={sideVideo.channel}
+                            image={sideVideo.image}                    
+                        />   
+                    ))}
+                    </section>
                 </section>
             </article>
             </>
         )
-    }
 };
 export default CreateVideo;

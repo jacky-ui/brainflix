@@ -206,3 +206,27 @@
         align-items: baseline;
     }
 }
+
+.side {
+    @include mixins.mobile-padding;
+    padding-top: 0rem;
+
+    @include mixins.desktop {
+        margin-right: 3.5rem;
+    }
+    &__title {
+        @include mixins.mobile-subheader;
+        color: colors-variables.$primary-color3;
+        font-weight: 700;
+        margin-top: 0rem;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-subheader;
+            padding-left: 2.25rem;
+            margin-bottom: 0rem;
+        }
+        @include mixins.desktop {
+            padding-left: 0rem;
+        }
+    }
+}

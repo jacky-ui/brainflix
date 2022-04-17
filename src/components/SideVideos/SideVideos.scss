@@ -56,7 +56,7 @@
             width: 25%;
         }
         @include mixins.desktop {
-            width: auto;
+            width: 50%;
         }
         &--title {
             @include mixins.mobile-subheader;
