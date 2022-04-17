@@ -1,0 +1,110 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors-variables';
+@use '../../styles/partials/typography';
+
+
+// Styling for user comments
+.comments {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 81%;
+    margin-left: auto;
+
+    @include mixins.tablet {
+        width: 90%;
+    }
+    @include mixins.desktop {
+        width: 92%;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline 
+    }
+
+    &__name {
+        @include mixins.mobile-subheader;
+        color: colors-variables.$secondary-color1;
+        position: relative;
+    }
+    &__date {
+        @include mixins.mobile-body;
+        color: colors-variables.$primary-color3;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-body;
+        }
+    }
+    &__profile {
+        background-color: colors-variables.$secondary-color3;
+        border-radius: 50%;
+        height: 2.25rem;
+        width: 2.25rem;
+        position: absolute;
+        left: -3.6rem;
+        bottom: -1rem;
+
+        @include mixins.tablet {
+            height: 2.5rem;
+            width: 2.5rem;
+            left: -4.3rem;
+        }
+        @include mixins.desktop {
+            right: 6.9rem;
+            left: auto;
+        }
+    }
+    &__paragraph {
+        @include mixins.mobile-body;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid colors-variables.$secondary-color3;
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-body;
+        }
+        @include mixins.desktop {
+            width: 104%;
+        }
+    }
+}
+
+// Like, views and upload icons
+.icon__views {
+    position: absolute;
+    bottom: 2.9rem;
+    right: 4rem;
+
+    @include mixins.tablet {
+        bottom: 1.1rem;
+        right: 10.5rem;
+    }
+}
+
+.icon__likes {
+    position: absolute;
+    bottom: 1rem;
+    right: 4rem;
+
+    @include mixins.tablet {
+        bottom: 1rem;
+        right: 3.5rem;
+    }
+}
+
+.icon__comment {
+    position: absolute;
+    left: 21%;
+    bottom: 0.3rem;
+
+    @include mixins.tablet {
+        right: 6.8rem;
+        left: unset;
+        bottom: 0.5rem;
+    }
+    @include mixins.desktop {
+        right: 7.8rem;
+    }
+}
