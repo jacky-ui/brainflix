@@ -11,11 +11,11 @@ const firstVideo = JsonVideo[0];
 const firstVideoTitle = firstVideo.title;
 const firstVideoData = JsonVideoData[0];
 const firstVideoComments = firstVideoData.comments[0];
-console.log(firstVideoData);
-console.log(firstVideoComments);
+// console.log(firstVideoData);
+// console.log(firstVideoComments);
 
 const formatTime = new Date(firstVideoData.timestamp).toLocaleDateString();
-console.log(formatTime);
+// console.log(formatTime);
 
 function CreateComments() {
     return(
