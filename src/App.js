@@ -4,28 +4,34 @@ import Video from './components/Video/Video';
 import JsonVideo from './assets/Data/videos.json';
 import JsonVideoData from './assets/Data/video-details.json';
 import React from 'react';
+import { Component } from 'react';
+import CreateComments from './components/Comments/comments';
 
-const VideoDatas = JsonVideo;
-const VideoDetails = JsonVideoData;
-
-class App extends React.Component {
+class App extends Component {
   state = {
-    VideoDatas: VideoDatas,
-    InitialVideo: VideoDatas[0]
+    videos: JsonVideo,
+    selectedVideo: JsonVideoData[0]
   }
 
   userClickHandler = (id) => {
-    const matchVideo = VideoDatas.find(VideoData => VideoData.id === id)
-    this.setState({InitialVideo: matchVideo})
+    this.setState({
+      selectedVideo: JsonVideoData.find(video => video.id === id)
+    })
   };
 
   render() {
+    const filteredVideo = JsonVideo.filter(video => video.id !== this.state.selectedVideo.id);
+
     return (
       <>
       <header>
         <Navigation />
       </header>
-        <Video userClickHandler={this.userClickHandler} VideoDatas={this.state.VideoDatas}/>
+        <Video 
+          videos={filteredVideo}
+          videoSelected={this.userClickHandler}
+          selectedVideos={this.state.selectedVideo}
+        />
       </>
     );
   }

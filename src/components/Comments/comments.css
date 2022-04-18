@@ -76,7 +76,6 @@
 @media screen and (min-width: 1280px) {
   .comments__profile {
     right: 6.9rem;
-    left: auto;
   }
 }
 .comments__paragraph {

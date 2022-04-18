@@ -44,7 +44,6 @@
                 @include mixins.desktop-padding;
                 width: 100%;
                 padding-right: 2rem;
-                border-right: 1px solid colors-variables.$primary-color3;
             }
 
         &--title {
@@ -151,9 +150,11 @@
             font-weight: 700;
             color: colors-variables.$primary-color3;
             align-self: center;
+            width: 63%;
 
             @include mixins.tablet {
                 @include mixins.desk-tab-body;
+                width: 80%;
             }
         }
         &--textarea {

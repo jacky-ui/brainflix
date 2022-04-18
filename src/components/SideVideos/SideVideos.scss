@@ -9,6 +9,7 @@
 
     @include mixins.desktop {
         margin-right: 3.5rem;
+        border-left: 1px solid colors-variables.$primary-color3;
     }
     &__container {
         padding-top: 0rem;
@@ -46,11 +47,13 @@
         width: 7.8rem;
         height: 4.5rem;
         margin-right: 1rem;
+        object-fit: cover;
     }
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 50%;
 
         @include mixins.tablet {
             width: 25%;

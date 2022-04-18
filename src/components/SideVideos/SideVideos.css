@@ -19,6 +19,7 @@
 @media screen and (min-width: 1280px) {
   .side {
     margin-right: 3.5rem;
+    border-left: 1px solid #AFAFAF;
   }
 }
 .side__container {
@@ -69,11 +70,14 @@
   width: 7.8rem;
   height: 4.5rem;
   margin-right: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .side__content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 50%;
 }
 @media screen and (min-width: 768px) {
   .side__content {
@@ -82,7 +86,7 @@
 }
 @media screen and (min-width: 1280px) {
   .side__content {
-    width: auto;
+    width: 50%;
   }
 }
 .side__content--title {

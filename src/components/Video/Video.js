@@ -5,8 +5,8 @@ import JsonVideoDatas from '../../assets/Data/video-details.json';
 import './video.css';
 import CreateComments from '../Comments/comments.js';
 import SideVideos from '../SideVideos/SideVideos.js';
+import CreateDescription from '../Description/description';
 import { render } from '@testing-library/react';
-// import '../SideVideos/SideVideos.css';
 
 const VideoDatas = JsonVideo;
 const firstVideo = JsonVideo[0];
@@ -15,45 +15,43 @@ const firstVideoData = JsonVideoDatas[0];
 const firstVideoComments = firstVideoData.comments[0];
 
 const sideVideos = JsonVideoDatas;
-// console.log(firstVideoData);
 
-// class CreateVideo extends React.Component {
-    // state = {
-    //     VideoDatas: VideoDatas,
-    //     initialVideo: VideoDatas[0]
-    // }
-
-    // userClickHandler = (id) => {
-    //     const matchVideo = VideoDatas.find(VideoData => VideoData.id === id)
-    //     this.setState({initialVideo: matchVideo})
-    // };
-function CreateVideo() {
-
+const CreateVideo = (props) => {
+    const { image, channel, description, likes, views, title, id, comments} = props.selectedVideos;
+    console.log(comments)
         return(
             <>
             {/* Current video display */}
             <article className="video">
                 <section className="video__container">
                     <video 
-                    controls poster={firstVideoPicture}
+                    controls poster={image}
                     className="video__main"
                     />
                 </section>
                 <section className="noname">
                     {/* Import past comments */}
-                    <CreateComments />
-
+                            <CreateComments
+                                // key={comment.timestamp} 
+                                selectedVideos={props.selectedVideos}
+                                // commentName={comment.name}
+                                // commentcomment={comment.comment}
+                                // commenttimestamp={comment.timestamp}
+                    />
                     <section className="side">
                     <h2 className="side__title">NEXT VIDEOS</h2>
                     {/* Videos user can select from on the side */}
-                    {sideVideos.map((sideVideo) => (
+                    {props.videos.map(video => {
+                        return (
                         <SideVideos 
-                            key={sideVideo.id}
-                            title={sideVideo.title}
-                            channel={sideVideo.channel}
-                            image={sideVideo.image}                    
-                        />   
-                    ))}
+                            key={video.id}
+                            title={video.title}
+                            channel={video.channel}
+                            image={video.image}  
+                            userClickHandler={props.userClickHandler}                  
+                        /> 
+                        )  
+                    })}
                     </section>
                 </section>
             </article>
@@ -61,3 +59,4 @@ function CreateVideo() {
         )
 };
 export default CreateVideo;
+
