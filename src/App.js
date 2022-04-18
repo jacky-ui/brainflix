@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-=======
 import './App.scss';
 import Navigation from './components/navigation/navigation.js';
 import Video from './components/Video/Video';
@@ -45,7 +26,6 @@ class App extends Component {
       <>
       <header>
         <Navigation />
->>>>>>> develop
       </header>
         <Video 
           videos={filteredVideo}
