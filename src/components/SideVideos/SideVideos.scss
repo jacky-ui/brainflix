@@ -1,0 +1,81 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors-variables';
+@use '../../styles/partials/typography';
+
+// Side Videos
+.side {
+    @include mixins.mobile-padding;
+    padding-top: 0rem;
+
+    @include mixins.desktop {
+        margin-right: 3.5rem;
+        border-left: 1px solid colors-variables.$primary-color3;
+    }
+    &__container {
+        padding-top: 0rem;
+        display: flex;
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            @include mixins.tablet-padding;
+            margin-bottom: 0rem;
+        }
+        @include mixins.desktop {
+            margin-right: 0rem;
+            padding-right: 0rem;
+            padding-top: 0rem;
+            padding-left: 0rem;
+        }
+    }
+    &__title {
+        @include mixins.mobile-subheader;
+        color: colors-variables.$primary-color3;
+        font-weight: 700;
+        margin-top: 0rem;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-subheader;
+            padding-left: 2.25rem;
+            margin-bottom: 0rem;
+        }
+        @include mixins.desktop {
+            padding-left: 0rem;
+        }
+    }
+    &__video {
+        border-radius: 4px;
+        width: 7.8rem;
+        height: 4.5rem;
+        margin-right: 1rem;
+        object-fit: cover;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+
+        @include mixins.tablet {
+            width: 25%;
+        }
+        @include mixins.desktop {
+            width: 50%;
+        }
+        &--title {
+            @include mixins.mobile-subheader;
+            color: colors-variables.$secondary-color1;
+    
+            @include mixins.tablet {
+            @include mixins.desk-tab-subheader;
+            }
+        }
+        &--uploader {
+            @include mixins.mobile-body;
+            color: colors-variables.$secondary-color1;
+    
+            @include mixins.tablet {
+                @include mixins.desk-tab-body;
+            }
+        }
+    }
+}
