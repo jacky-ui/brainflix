@@ -1,0 +1,64 @@
+@use '../../styles/global.scss';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors-variables';
+@use '../../styles/partials/typography';
+
+.comments {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid colors-variables.$secondary-color3;
+    display: flex;
+    
+
+    &__profile {
+        background-color: colors-variables.$secondary-color3;
+        border-radius: 50%;
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-right: 1rem;
+
+        @include mixins.tablet {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+    &__container {
+        display: flex;
+        justify-content: end;
+
+        &--name {
+            @include mixins.mobile-body;
+            color: colors-variables.$secondary-color1;
+            font-weight: 700;
+            margin-right: auto;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-body;
+                color: colors-variables.$secondary-color1;
+                font-weight: 700;
+            }
+        }
+        &--date {
+            @include mixins.mobile-body;
+            color: colors-variables.$primary-color3;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-body;
+                color: colors-variables.$primary-color3;
+            }
+        }
+        &--review {
+            @include mixins.mobile-body;
+            color: colors-variables.$secondary-color1;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-body;
+                color: colors-variables.$secondary-color1;
+            }
+        }
+    }
+    &__wrapper {
+        width: 100%;
+        margin-left: auto;
+    }
+}

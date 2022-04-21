@@ -1,0 +1,23 @@
+@use '../../styles/partials/mixins';
+
+.icon__search {
+    position: absolute;
+    bottom: 3.9rem;
+    left: 0.5rem;
+
+    @include mixins.tablet {
+        bottom: 0.7rem;
+        left: 0.5rem;
+    }
+}
+
+.icon__upload {
+    position: absolute;
+    bottom: 0.4rem;
+    left: 0.5rem;
+
+    @include mixins.tablet {
+        left: 15rem;
+        bottom: 0.5rem;
+    }
+}

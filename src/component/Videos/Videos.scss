@@ -1,0 +1,45 @@
+@use '../../styles/global.scss';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors-variables';
+
+.information__container {
+    @include mixins.mobile-padding;
+
+    @include mixins.tablet {
+        @include mixins.tablet-padding;
+    }
+    @include mixins.desktop {
+        @include mixins.desktop-padding;
+        display: flex;
+    }
+}
+
+.information__nextvideos {
+    margin-top: 1rem;
+
+    @include mixins.desktop {
+        width: 35%;
+        margin-left: auto;
+        border-left: 1px solid colors-variables.$secondary-color3;
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    &--header {
+        color: colors-variables.$primary-color3;
+        @include mixins.mobile-body;
+        font-weight: 700;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-body;
+            font-weight: 700;
+            color: colors-variables.$primary-color3;
+        }
+    }
+}
+
+.information__forms {
+    @include mixins.desktop {
+    width: 70%;
+    }
+}

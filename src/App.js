@@ -1,37 +1,39 @@
-import './App.scss';
-import Navigation from './components/navigation/navigation.js';
-import Video from './components/Video/Video';
-import JsonVideo from './assets/Data/videos.json';
-import JsonVideoData from './assets/Data/video-details.json';
-import React from 'react';
+import './App.css';
+import './styles/global.css';
+import Navigation from './component/Navigation/Navigation.js';
+import Videos from './component/Videos/Videos';
 import { Component } from 'react';
-import CreateComments from './components/Comments/comments';
+import JsonVideos from './assets/Data/videos.json';
+import JsonVideoDetails from './assets/Data/video-details.json'
+
+console.log(JsonVideos);
+console.log(JsonVideoDetails);
 
 class App extends Component {
   state = {
-    videos: JsonVideo,
-    selectedVideo: JsonVideoData[0]
+    videos: JsonVideos,
+    selectedVideo: JsonVideoDetails[0]
   }
 
-  userClickHandler = (id) => {
+  handleSelectVideo = id => {
     this.setState({
-      selectedVideo: JsonVideoData.find(video => video.id === id)
+      selectedVideo: JsonVideoDetails.find(video => video.id === id)
     })
-  };
+  }
 
-  render() {
-    const filteredVideo = JsonVideo.filter(video => video.id !== this.state.selectedVideo.id);
+  render () {
+    const videoLists = JsonVideos.filter(video => video.id !== this.state.selectedVideo.id);
 
     return (
       <>
       <header>
         <Navigation />
       </header>
-        <Video 
-          videos={filteredVideo}
-          videoSelected={this.userClickHandler}
-          selectedVideos={this.state.selectedVideo}
-        />
+      <Videos 
+        videos={videoLists}
+        videoSelected={this.handleSelectVideo}
+        selectedVideo={this.state.selectedVideo}
+      />
       </>
     );
   }
