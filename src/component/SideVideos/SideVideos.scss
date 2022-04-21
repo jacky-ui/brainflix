@@ -1,0 +1,40 @@
+@use '../../styles/global.scss';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+@use '../../styles/partials/colors-variables';
+
+.sidevideos {
+    margin-top: 1rem;
+    display: flex;
+
+    // @include mixins.desktop {
+    //     width: 119%;
+    // }
+
+    &__video {
+        border-radius: 4px;
+        object-fit: cover;
+        height: 4.5rem;
+        width: 7rem;
+    }
+    &__container {
+        margin-left: auto;
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 54%;
+
+        @include mixins.desktop {
+            width: 45%
+        }
+    }
+    &__title {
+        @include mixins.mobile-subheader;
+        color: colors-variables.$secondary-color1;
+    }
+    &__uploader {
+        @include mixins.mobile-body;
+        color: colors-variables.$secondary-color1;
+    }
+}

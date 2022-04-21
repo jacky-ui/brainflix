@@ -1,0 +1,60 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0rem;
+}
+
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+.sidevideos {
+  margin-top: 1rem;
+  display: flex;
+}
+.sidevideos__video {
+  border-radius: 4px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 4.5rem;
+  width: 7rem;
+}
+.sidevideos__container {
+  margin-left: auto;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 54%;
+}
+@media screen and (min-width: 1280px) {
+  .sidevideos__container {
+    width: 45%;
+  }
+}
+.sidevideos__title {
+  font-family: "AvenirNext";
+  font-size: 0.82rem;
+  line-height: 1.12rem;
+  font-weight: bold;
+  color: #000000;
+}
+.sidevideos__uploader {
+  font-family: "AvenirNext";
+  font-size: 0.82rem;
+  line-height: 1.12rem;
+  font-weight: normal;
+  color: #000000;
+}/*# sourceMappingURL=SideVideos.css.map */
