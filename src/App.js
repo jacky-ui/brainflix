@@ -18,8 +18,8 @@ function App() {
       </header>
 
       <Switch>
-      <Route path="/" exact component={HomePage} />
-      <Route path="/upload" component={UploadPage} />
+        <Route path="/" exact component={HomePage} />
+        <Route path="/upload" component={UploadPage} />
       </Switch>
     </BrowserRouter>
   )
