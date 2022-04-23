@@ -13,7 +13,7 @@ const API_KEY="?api_key=834dc594-6ea9-4eb2-bcd8-7bb30109cbc3";
 
 class HomePage extends Component {
     state = {
-        sideVideos: [],
+        sideVideos: [], //This will be used for the video list on the side
         selectedVideos: null
     }
 
@@ -26,16 +26,16 @@ class HomePage extends Component {
                 })
             });
             axios 
-                .get(`${API_URL}videos/${API_KEY}`)
+                .get(`${API_URL}videos/84e96018-4022-434e-80bf-000ce4cd12b8/${API_KEY}`)
                 .then((result) => {
+                    console.log(result.data)
                     this.setState({
-                        selectedVideos: result.data[0]
+                        selectedVideos: result.data
                     })
                 })
     };
 
     render () {
-        console.log(this.state.sideVideos);
         if (!this.state.selectedVideos && this.state.sideVideos) {
             return(
                 <section>
@@ -43,6 +43,8 @@ class HomePage extends Component {
                 </section>
             )
         }
+        let commentLists = this.state.selectedVideos.comments;
+        console.log(commentLists);
 
         return (
             <article>
@@ -50,9 +52,26 @@ class HomePage extends Component {
 
                 <section className="information__container">
                     <div className="information__forms">
-                        <VideoDescription />
+                        <VideoDescription 
+                            description={this.state.selectedVideos.description}
+                            channel={this.state.selectedVideos.channel}
+                            likes={this.state.selectedVideos.likes}
+                            views={this.state.selectedVideos.views}
+                            timestamp={this.state.selectedVideos.timestamp}
+                            title={this.state.selectedVideos.title}
+                            />
+
                         <Forms />
-                        <Comments />
+                        {commentLists.map(comment => {
+                            return(
+                                <Comments 
+                                    key={comment.id}
+                                    name={comment.name}
+                                    timestamp={comment.timestamp}
+                                    comment={comment.comment}
+                                />
+                            )
+                        })}
                     </div>
 
                     <section className="information__nextvideos">

@@ -1,11 +1,7 @@
 import './App.css';
 import './styles/global.css';
 import Navigation from './component/Navigation/Navigation.js';
-import Videos from './component/Videos/Videos';
-import { Component } from 'react';
-import JsonVideos from './assets/Data/videos.json';
-import JsonVideoDetails from './assets/Data/video-details.json'
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import HomePage from './Pages/HomePage/HomePage';
 import UploadPage from './Pages/UploadPage/UploadPage.js';
 
@@ -13,9 +9,11 @@ function App() {
   return(
     <BrowserRouter>
 
-      <header>
-        <Navigation />
-      </header>
+      <Link to="/">
+        <header>
+          <Navigation />
+        </header>
+      </Link>
 
       <Switch>
         <Route path="/" exact component={HomePage} />
