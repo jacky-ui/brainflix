@@ -38,7 +38,7 @@ function Videos(props) {
 
                 <section className="information__nextvideos">
                     <span className="information__nextvideos--header">NEXT VIDEOS</span>
-                    {props.videos.map(video => {
+                    {/*{props.videos.map(video => {
                         return(
                             <SideVideos
                                 key={video.id}
@@ -49,7 +49,7 @@ function Videos(props) {
                                 videoSelected={props.videoSelected}
                             />
                         )
-                    })}
+                    })}*/}
 
                 </section>
             </section>

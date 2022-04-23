@@ -5,7 +5,7 @@ function MainVideo(props) {
     return(
         <section className="video">
             <video
-                controls poster={props.thisVideo}
+                controls poster={props.selectedVideos.image}
                 className="video__main"
             />
         </section>

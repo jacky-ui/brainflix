@@ -18,10 +18,12 @@ function VideoDescription(props) {
                     <img 
                         className="icon__views"
                         src={viewsIcon}
+                        alt=""
                     />
                     <img 
                         className="icon__likes"
                         src={likesIcon}
+                        alt=""
                     />
                 </div>
             </div>

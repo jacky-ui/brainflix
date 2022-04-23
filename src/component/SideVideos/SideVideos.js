@@ -9,6 +9,7 @@ function SideVideos(props) {
             <img 
                 src={props.image}
                 className='sidevideos__video'
+                alt=""
             />
 
             <div className='sidevideos__container'>

@@ -9,7 +9,23 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from './Pages/HomePage/HomePage';
 import UploadPage from './Pages/UploadPage/UploadPage.js';
 
-class App extends Component {
+function App() {
+  return(
+    <BrowserRouter>
+
+      <header>
+        <Navigation />
+      </header>
+
+      <Switch>
+      <Route path="/" exact component={HomePage} />
+      <Route path="/upload" component={UploadPage} />
+      </Switch>
+    </BrowserRouter>
+  )
+};
+
+{/*class App extends Component {
   state = {
     videos: JsonVideos,
     selectedVideo: JsonVideoDetails[0]
@@ -44,6 +60,6 @@ class App extends Component {
       </>
     );
   }
-}
+}*/}
 
 export default App;

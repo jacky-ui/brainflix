@@ -11,6 +11,7 @@ function Navigation() {
             <img
                 className="navigation__logo" 
                 src={siteLogo}
+                alt=""
             />
             <div className="navigation__input">
                 <input
@@ -22,6 +23,7 @@ function Navigation() {
                 <img 
                     className="navigation__input--profile"
                     src={uploadProfile}
+                    alt=""
                 />
                 <NavigationIcons />
                 <a 
