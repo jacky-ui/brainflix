@@ -24,8 +24,12 @@ function Navigation() {
                     src={uploadProfile}
                 />
                 <NavigationIcons />
-                <label htmlFor="uploadFile" className="navigation__input--label">UPLOAD</label>
-                <input type="file" id="uploadFile" name="uploadFile" className="navigation__input--file"></input>
+                <a 
+                    href=""
+                    className="navigation__input--label"
+                >UPLOAD</a>
+                {/*<label htmlFor="uploadFile" className="navigation__input--label">UPLOAD</label>
+    <input type="file" id="uploadFile" name="uploadFile" className="navigation__input--file"></input>*/}
             </div>
         </nav>
     )

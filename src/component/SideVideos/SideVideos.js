@@ -6,8 +6,8 @@ function SideVideos(props) {
     }
     return(
         <div className="sidevideos" onClick={videoSelected}>
-            <video 
-                controls poster={props.image}
+            <img 
+                src={props.image}
                 className='sidevideos__video'
             />
 

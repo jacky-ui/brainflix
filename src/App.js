@@ -5,9 +5,9 @@ import Videos from './component/Videos/Videos';
 import { Component } from 'react';
 import JsonVideos from './assets/Data/videos.json';
 import JsonVideoDetails from './assets/Data/video-details.json'
-
-console.log(JsonVideos);
-console.log(JsonVideoDetails);
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import HomePage from './Pages/HomePage/HomePage';
+import UploadPage from './Pages/UploadPage/UploadPage.js';
 
 class App extends Component {
   state = {
@@ -26,14 +26,21 @@ class App extends Component {
 
     return (
       <>
-      <header>
-        <Navigation />
-      </header>
-      <Videos 
-        videos={videoLists}
-        videoSelected={this.handleSelectVideo}
-        selectedVideo={this.state.selectedVideo}
-      />
+      <BrowserRouter>
+
+        <header>
+          <Navigation />
+        </header>
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/upload" component={UploadPage} />
+          <Videos 
+            videos={videoLists}
+            videoSelected={this.handleSelectVideo}
+            selectedVideo={this.state.selectedVideo}
+          />
+        </Switch>
+      </BrowserRouter>
       </>
     );
   }

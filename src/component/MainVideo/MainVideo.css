@@ -18,18 +18,22 @@
   }
 }
 .video__main {
-  height: 70vh;
-  width: 100vw;
+  height: 50vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media screen and (min-width: 768px) {
   .video__main {
     padding-left: 2.25rem;
     padding-right: 2.25rem;
+    height: 60vh;
   }
 }
 @media screen and (min-width: 1280px) {
   .video__main {
     padding-left: 9.5rem;
     padding-right: 9.5rem;
+    height: 70vh;
   }
 }/*# sourceMappingURL=MainVideo.css.map */

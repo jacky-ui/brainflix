@@ -38,10 +38,9 @@
         }
 
         &--search {
+            @include mixins.text-borders;
             width: 81.5%;
             height: 2.25rem;
-            border-radius: 4px;
-            border: 1px solid colors-variables.$secondary-color3;
             margin-right: 1rem;
             padding-left: 2rem;
 
@@ -65,6 +64,7 @@
             text-align: center;
             border-radius: 4px;
             @include mixins.mobile-button-label;
+            text-decoration: none;
 
             &:hover {
                 background-color: colors-variables.$secondary-color2;

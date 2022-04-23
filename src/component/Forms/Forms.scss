@@ -61,8 +61,8 @@
             }
         }
         &--textarea {
+            @include mixins.text-borders;
             resize: none;
-            border-radius: 4px;
             padding-left: 1rem;
             height: 5.6rem;
             width: 100%;
