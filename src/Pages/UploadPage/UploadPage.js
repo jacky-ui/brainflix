@@ -10,7 +10,7 @@ function UploadPage() {
                 <h1 className="upload__header">Upload Video</h1>
 
                 <section className="upload__container">
-                    <div>
+                    <div className="upload--spacing">
                         <span className="upload__subhead">VIDEO THUMBNAIL</span>
                         <img 
                             src={uploadPicture}
@@ -30,6 +30,7 @@ function UploadPage() {
                             className="upload__form--textarea"
                             placeholder='Add a description to your video'
                         />
+                        <span className="upload__form--border"></span>
                         <button type="submit" className="upload__form--submit">PUBLISH</button>
                         <button className="upload__form--cancel">CANCEL</button>
                         <img
