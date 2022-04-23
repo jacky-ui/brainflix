@@ -7,11 +7,11 @@ import '../Videos/Videos.css';
 import '../../styles/global.css';
 
 function Videos(props) {
-    const { title, description, comments, likes, id, views, channel } = props.selectedVideo
+    const { title, description, comments, likes, image, views, channel } = props.selectedVideo
     return(
         <article>
             <MainVideo
-                thisVideo={props.selectedVideo.image}
+                thisVideo={image}
             />
 
             <section className="information__container">
@@ -27,7 +27,7 @@ function Videos(props) {
                     {comments.map(comment => {
                         return(
                             <Comments 
-                                key={id}
+                                key={comment.name}
                                 name={comment.name}
                                 timestamp={comment.timestamp}
                                 comment={comment.comment}
