@@ -1,42 +1,25 @@
+import Navigation from './component/Navigation/Navigation.js';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import HomePage from './Pages/HomePage/HomePage';
+import UploadPage from './Pages/UploadPage/UploadPage.js';
 import './App.css';
 import './styles/global.css';
-import Navigation from './component/Navigation/Navigation.js';
-import Videos from './component/Videos/Videos';
-import { Component } from 'react';
-import JsonVideos from './assets/Data/videos.json';
-import JsonVideoDetails from './assets/Data/video-details.json'
 
-console.log(JsonVideos);
-console.log(JsonVideoDetails);
+function App() {
+  return(
+    <BrowserRouter>
 
-class App extends Component {
-  state = {
-    videos: JsonVideos,
-    selectedVideo: JsonVideoDetails[0]
-  }
+        <header>
+          <Navigation />
+        </header>
 
-  handleSelectVideo = id => {
-    this.setState({
-      selectedVideo: JsonVideoDetails.find(video => video.id === id)
-    })
-  }
-
-  render () {
-    const videoLists = JsonVideos.filter(video => video.id !== this.state.selectedVideo.id);
-
-    return (
-      <>
-      <header>
-        <Navigation />
-      </header>
-      <Videos 
-        videos={videoLists}
-        videoSelected={this.handleSelectVideo}
-        selectedVideo={this.state.selectedVideo}
-      />
-      </>
-    );
-  }
-}
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/upload" component={UploadPage} />
+        <Route path="/video/:videoId" component={HomePage}/>
+      </Switch>
+    </BrowserRouter>
+  )
+};
 
 export default App;

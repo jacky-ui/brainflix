@@ -3,13 +3,14 @@ import viewsIcon from '../../assets/Icons/views.svg';
 import likesIcon from '../../assets/Icons/likes.svg';
 
 function VideoDescription(props) {
+    const formatTime = new Date(props.timestamp).toLocaleDateString();
     return(
         <section className="description">
             <h2 className="description__header">{props.title}</h2>
             <div className="description__texts">
                 <div className="description__container">
                     <p className="description__text--bold">{`By ${props.channel}`}</p>
-                    <p className="description__text">{props.timestamp}</p>
+                    <p className="description__text">{formatTime}</p>
                 </div>
 
                 <div className="description__container--align">
@@ -18,10 +19,12 @@ function VideoDescription(props) {
                     <img 
                         className="icon__views"
                         src={viewsIcon}
+                        alt=""
                     />
                     <img 
                         className="icon__likes"
                         src={likesIcon}
+                        alt=""
                     />
                 </div>
             </div>

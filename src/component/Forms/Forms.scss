@@ -61,8 +61,13 @@
             }
         }
         &--textarea {
+<<<<<<< HEAD
             resize: none;
             border-radius: 4px;
+=======
+            @include mixins.text-borders;
+            resize: none;
+>>>>>>> develop
             padding-left: 1rem;
             height: 5.6rem;
             width: 100%;
@@ -94,6 +99,13 @@
                 padding-left: 2rem;
                 padding-right: 2rem;
             }
+<<<<<<< HEAD
+=======
+            &:hover {
+                background-color: colors-variables.$secondary-color2;
+                cursor: pointer;
+            }
+>>>>>>> develop
         }
     }
 }

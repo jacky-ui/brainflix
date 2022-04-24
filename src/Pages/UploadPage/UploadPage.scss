@@ -1,0 +1,157 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors-variables';
+@use '../../styles/partials/typography';
+
+.upload {
+    border-top: 1px solid colors-variables.$secondary-color3;
+
+    &--padding {
+        @include mixins.mobile-padding;
+
+        @include mixins.tablet {
+            @include mixins.tablet-padding;
+        }
+        @include mixins.desktop {
+            @include mixins.desktop-padding;
+        }
+    }
+    &__header {
+        @include mixins.mobile-pgheader;
+        margin-top: 0rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid colors-variables.$secondary-color3;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-pgheader;
+        }
+    }
+    &__container {
+        @include mixins.desktop {
+            display: flex;
+        }
+    }
+    &__subhead {
+        @include mixins.mobile-subheader;
+        color: colors-variables.$primary-color3;
+        margin-bottom: 0.2rem;
+        display: block;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-subheader;
+        }
+    }
+    &__image {
+        border-radius: 4px;
+        width: 100%;
+        height: auto;
+
+        @include mixins.desktop {
+            height: 10.4rem;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        position: relative;
+
+        @include mixins.desktop {
+            width: 70%;
+        }
+
+        &--title {
+            @include mixins.mobile-subheader;
+            color: colors-variables.$primary-color3;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-subheader;
+            }
+        }
+        &--text {
+            padding-left: 0.7rem;
+            @include mixins.text-borders;
+            margin-bottom: 1rem;
+            height: 2.25rem;
+        }
+        &--textarea {
+            @include mixins.text-borders;
+            padding-left: 0.7rem;
+            padding-top: 0.5rem;
+            resize: none;
+            height: 5rem;
+            margin-bottom: 1rem;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-subheader;
+                margin-bottom: 1.5rem;
+            }
+        }
+        &--submit {
+            @include mixins.mobile-button-label;
+            background-color: colors-variables.$primary-color2;
+            color: colors-variables.$primary-color4;
+            border-radius: 4px;
+            border-style: none;
+            height: 2.25rem;
+            margin-bottom: 1rem;
+
+            &:hover {
+                background-color: colors-variables.$secondary-color2;
+            }
+            @include mixins.tablet {
+                @include mixins.desk-tab-labelsbtn;
+                align-self: flex-end;
+                width: 9.375rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        &--cancel {
+            @include mixins.mobile-button-label;
+            background-color: colors-variables.$primary-color4;
+            color: colors-variables.$primary-color2;
+            border-radius: 4px;
+            border-style: none;
+            height: 2.25rem;
+
+            &:hover {
+                background-color: colors-variables.$primary-color2;
+                color: colors-variables.$primary-color4;
+            }
+            @include mixins.tablet {
+                @include mixins.desk-tab-labelsbtn;
+                position: relative;
+                margin-left: auto;
+                bottom: 3.3rem;
+                right: 10rem;
+                width: 9.375rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        &--border {
+            @include mixins.tablet {
+                border: 1px solid colors-variables.$secondary-color3;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    &--spacing {
+        @include mixins.desktop {
+            width: 30%;
+            margin-right: 2rem;
+        }
+    }
+}
+
+// Icon Styling
+.icon__publish {
+    position: absolute;
+    bottom: 3.8rem;
+    left: 0.5rem;
+
+    @include mixins.tablet {
+        left: unset;
+        right: 7.5rem;
+    }
+}

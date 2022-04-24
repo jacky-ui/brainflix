@@ -1,6 +1,6 @@
-import '../Forms/Forms.css';
 import formsProfile from '../../assets/Images/Mohan-muruge.jpg';
 import formsIcon from '../../assets/Icons/add_comment.svg';
+import '../Forms/Forms.css';
 
 function Forms() {
     return(
