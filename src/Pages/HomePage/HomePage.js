@@ -57,7 +57,7 @@ class HomePage extends Component {
         if (!this.state.selectedVideos) {
             return(
                 <section>
-                    <p>Loading your content...</p>
+                    <h1>Loading your content...</h1>
                 </section>
             )
         }
@@ -111,7 +111,5 @@ class HomePage extends Component {
         )
     }
 };
-
-{/*{this.state.sideVideos.map(sideVideo => { */}
 
 export default HomePage;

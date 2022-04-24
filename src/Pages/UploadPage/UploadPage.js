@@ -5,7 +5,6 @@ import '../../styles/global.scss';
 import { Redirect } from 'react-router-dom';
 
 function UploadPage(props) {
-    console.log(props)
     const handleUserSubmit = (e) => {
         alert("Upload Successful! Click 'ok' to return!")
         props.history.push("/")

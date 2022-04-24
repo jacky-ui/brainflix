@@ -1,10 +1,10 @@
-import './Navigation.css';
-import '../../styles/global.css';
-import '../NavigationIcons/NavigationIcons.css';
 import siteLogo from '../../assets/Logo/BrainFlix-logo.svg';
 import uploadProfile from '../../assets/Images/Mohan-muruge.jpg';
 import NavigationIcons from '../NavigationIcons/NavigationIcons';
 import { Link } from 'react-router-dom';
+import './Navigation.css';
+import '../../styles/global.css';
+import '../NavigationIcons/NavigationIcons.css';
 
 function Navigation() {
     return(
