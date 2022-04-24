@@ -41,7 +41,7 @@ body {
 }
 .comments__container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .comments__container--name {
   font-family: "AvenirNext";

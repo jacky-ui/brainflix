@@ -8,10 +8,12 @@ function NavigationIcons() {
         <img 
             className="icon__search"
             src={searchIcon}
+            alt="search icon"
         />
         <img
             className="icon__upload"
             src={uploadIcon}
+            alt="upload icon"
         />
         </>
     )

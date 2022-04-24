@@ -2,7 +2,6 @@ import '../Comments/Comments.css';
 
 function Comments(props) {
     const formatTime = new Date(props.timestamp).toLocaleDateString();
-    console.log(props)
     return(
         <section className="comments">
             <div className="comments__profile"></div>

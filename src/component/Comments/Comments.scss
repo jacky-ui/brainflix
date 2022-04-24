@@ -24,7 +24,7 @@
     }
     &__container {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
 
         &--name {
             @include mixins.mobile-body;

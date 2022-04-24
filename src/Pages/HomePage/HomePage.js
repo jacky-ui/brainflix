@@ -17,26 +17,42 @@ class HomePage extends Component {
         selectedVideos: null
     }
 
+    getVideoDetails = (videoId) => {
+        axios 
+            .get(`${API_URL}videos/${videoId}/${API_KEY}`)
+            .then((response) => {
+                this.setState({
+                    selectedVideos: response.data
+                });
+            });
+    }
+
     componentDidMount() {
         axios
             .get(`${API_URL}videos/${API_KEY}`)
-            .then((result) => {
+            .then((response) => {
                 this.setState({
-                    sideVideos: result.data
+                    sideVideos: response.data
                 })
+                return response.data[0].id
+            })
+            .then(videoId => {
+                this.getVideoDetails(videoId);
             });
-            axios 
-                .get(`${API_URL}videos/84e96018-4022-434e-80bf-000ce4cd12b8/${API_KEY}`)
-                .then((result) => {
-                    console.log(result.data)
-                    this.setState({
-                        selectedVideos: result.data
-                    })
-                })
     };
 
+    componentDidUpdate(prevProps, prevState) {
+        const currentVideoId = this.props.match.params.videoId
+        console.log(currentVideoId)
+
+        if (currentVideoId !==prevProps.match.params.videoId) {
+            const videoToBeSelected = currentVideoId;
+            this.getVideoDetails(videoToBeSelected);
+        }
+    }
+
     render () {
-        if (!this.state.selectedVideos && this.state.sideVideos) {
+        if (!this.state.selectedVideos) {
             return(
                 <section>
                     <p>Loading your content...</p>
@@ -44,7 +60,6 @@ class HomePage extends Component {
             )
         }
         let commentLists = this.state.selectedVideos.comments;
-        console.log(commentLists);
 
         return (
             <article>
@@ -76,11 +91,10 @@ class HomePage extends Component {
 
                     <section className="information__nextvideos">
                         <span className="information__nextvideos--header">NEXT VIDEOS</span>
-
                         {this.state.sideVideos.map(sideVideo => {
                             return(
                                 <SideVideos 
-                                    key={sideVideo.id}
+                                    id={sideVideo.id}
                                     title={sideVideo.title}
                                     channel={sideVideo.channel}
                                     image={sideVideo.image}

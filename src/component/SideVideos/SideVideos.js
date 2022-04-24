@@ -1,11 +1,14 @@
+import { Link } from 'react-router-dom';
 import './SideVideos.css';
 
 function SideVideos(props) {
-    const videoSelected = e => {
+    {/*const videoSelected = e => {
         props.videoSelected(props.id);
-    }
+    }*/}
     return(
-        <div className="sidevideos" onClick={videoSelected}>
+        
+        <Link to={`/video/${props.id}`}>
+        <div className="sidevideos" key={props.id}>
             <img 
                 src={props.image}
                 className='sidevideos__video'
@@ -17,6 +20,7 @@ function SideVideos(props) {
                 <span className="sidevideos__uploader">{props.channel}</span>
             </div>
         </div>
+        </Link>
     )
 };
 

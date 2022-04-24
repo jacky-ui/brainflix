@@ -15,6 +15,7 @@ function UploadPage() {
                         <img 
                             src={uploadPicture}
                             className="upload__image"
+                            alt="upload"
                         />
                     </div>
 
@@ -36,6 +37,7 @@ function UploadPage() {
                         <img
                             className="icon__publish" 
                             src={publishIcon}
+                            alt="publish icon"
                         />
                     </div>
                 </section>
