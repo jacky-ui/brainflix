@@ -158,6 +158,10 @@ body {
     padding-right: 2rem;
   }
 }
+.forms__form--submit:hover {
+  background-color: #0065AD;
+  cursor: pointer;
+}
 
 .icon__comment {
   position: absolute;

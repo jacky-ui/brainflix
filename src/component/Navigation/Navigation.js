@@ -9,11 +9,13 @@ import { Link } from 'react-router-dom';
 function Navigation() {
     return(
         <nav className="navigation">
+            <Link to="/">
             <img
                 className="navigation__logo" 
                 src={siteLogo}
                 alt="navigation logo"
             />
+            </Link>
             <div className="navigation__input">
                 <input
                     className="navigation__input--search" 
@@ -28,14 +30,11 @@ function Navigation() {
                 />
                 <NavigationIcons />
 
-                <Link to="/">
-                    <a 
-                        href="/"
+                <Link to="/upload">
+                    <button
                         className="navigation__input--label"
-                    >UPLOAD</a>
+                    >UPLOAD</button>
                 </Link>
-                {/*<label htmlFor="uploadFile" className="navigation__input--label">UPLOAD</label>
-    <input type="file" id="uploadFile" name="uploadFile" className="navigation__input--file"></input>*/}
             </div>
         </nav>
     )

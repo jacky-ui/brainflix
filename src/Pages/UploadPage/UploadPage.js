@@ -2,8 +2,19 @@ import uploadPicture from '../../assets/Images/Upload-video-preview.jpg';
 import publishIcon from '../../assets/Icons/publish.svg';
 import './UploadPage.scss';
 import '../../styles/global.scss';
+import { Redirect } from 'react-router-dom';
 
-function UploadPage() {
+function UploadPage(props) {
+    console.log(props)
+    const handleUserSubmit = (e) => {
+        alert("Upload Successful! Click 'ok' to return!")
+        props.history.push("/")
+    }
+
+    const handleUserCancel = (e) => {
+        props.history.push("/")
+    }
+
     return (
         <article className="upload">
             <section className="upload--padding">
@@ -32,8 +43,8 @@ function UploadPage() {
                             placeholder='Add a description to your video'
                         />
                         <span className="upload__form--border"></span>
-                        <button type="submit" className="upload__form--submit">PUBLISH</button>
-                        <button className="upload__form--cancel">CANCEL</button>
+                        <button type="submit" className="upload__form--submit" onClick={handleUserSubmit}>PUBLISH</button>
+                        <button className="upload__form--cancel" onClick={handleUserCancel}>CANCEL</button>
                         <img
                             className="icon__publish" 
                             src={publishIcon}

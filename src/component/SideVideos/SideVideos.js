@@ -6,7 +6,6 @@ function SideVideos(props) {
         props.videoSelected(props.id);
     }*/}
     return(
-        
         <Link to={`/video/${props.id}`}>
         <div className="sidevideos" key={props.id}>
             <img 

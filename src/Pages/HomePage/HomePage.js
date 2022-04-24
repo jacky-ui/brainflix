@@ -21,8 +21,9 @@ class HomePage extends Component {
         axios 
             .get(`${API_URL}videos/${videoId}/${API_KEY}`)
             .then((response) => {
+                const selectedData = response.data;
                 this.setState({
-                    selectedVideos: response.data
+                    selectedVideos: selectedData
                 });
             });
     }
@@ -43,13 +44,14 @@ class HomePage extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         const currentVideoId = this.props.match.params.videoId
-        console.log(currentVideoId)
 
         if (currentVideoId !==prevProps.match.params.videoId) {
             const videoToBeSelected = currentVideoId;
             this.getVideoDetails(videoToBeSelected);
         }
     }
+
+    
 
     render () {
         if (!this.state.selectedVideos) {
@@ -60,6 +62,7 @@ class HomePage extends Component {
             )
         }
         let commentLists = this.state.selectedVideos.comments;
+        const filteredVideo = this.state.sideVideos.filter(video => video.id !== this.state.selectedVideos.id);
 
         return (
             <article>
@@ -91,13 +94,14 @@ class HomePage extends Component {
 
                     <section className="information__nextvideos">
                         <span className="information__nextvideos--header">NEXT VIDEOS</span>
-                        {this.state.sideVideos.map(sideVideo => {
+                        {filteredVideo.map(video => {
                             return(
                                 <SideVideos 
-                                    id={sideVideo.id}
-                                    title={sideVideo.title}
-                                    channel={sideVideo.channel}
-                                    image={sideVideo.image}
+                                    id={video.id}
+                                    key={video.channel}
+                                    title={video.title}
+                                    channel={video.channel}
+                                    image={video.image}
                                 />
                             )
                         })}
@@ -107,5 +111,7 @@ class HomePage extends Component {
         )
     }
 };
+
+{/*{this.state.sideVideos.map(sideVideo => { */}
 
 export default HomePage;

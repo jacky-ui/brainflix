@@ -94,6 +94,10 @@
                 padding-left: 2rem;
                 padding-right: 2rem;
             }
+            &:hover {
+                background-color: colors-variables.$secondary-color2;
+                cursor: pointer;
+            }
         }
     }
 }

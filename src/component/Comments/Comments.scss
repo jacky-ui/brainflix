@@ -47,16 +47,16 @@
                 color: colors-variables.$primary-color3;
             }
         }
-        &--review {
-            @include mixins.mobile-body;
-            color: colors-variables.$secondary-color1;
+    }
+    &__review {
+        @include mixins.mobile-body;
+        color: colors-variables.$secondary-color1;
 
-            @include mixins.tablet {
-                @include mixins.desk-tab-body;
-                color: colors-variables.$secondary-color1;
+        @include mixins.tablet {
+            @include mixins.desk-tab-body;
+            color: colors-variables.$secondary-color1;
             }
         }
-    }
     &__wrapper {
         width: 100%;
         margin-left: auto;
