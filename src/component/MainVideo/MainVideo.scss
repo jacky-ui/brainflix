@@ -7,30 +7,19 @@
         background-color: colors-variables.$secondary-color1;
     }
     &__main {
-<<<<<<< HEAD
-        height: 70vh;
-        width: 100vw;
-=======
         height: 50vh;
         width: 100%;
         object-fit: cover;
->>>>>>> develop
 
         @include mixins.tablet{
         padding-left: 2.25rem;
         padding-right: 2.25rem;
-<<<<<<< HEAD
-=======
         height: 60vh;
->>>>>>> develop
         }
         @include mixins.desktop {
             padding-left: 9.5rem;
             padding-right: 9.5rem;
-<<<<<<< HEAD
-=======
             height: 70vh;
->>>>>>> develop
         }
     }
 }

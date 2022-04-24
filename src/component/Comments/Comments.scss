@@ -24,11 +24,7 @@
     }
     &__container {
         display: flex;
-<<<<<<< HEAD
-        justify-content: end;
-=======
         justify-content: flex-end;
->>>>>>> develop
 
         &--name {
             @include mixins.mobile-body;
@@ -51,18 +47,6 @@
                 color: colors-variables.$primary-color3;
             }
         }
-<<<<<<< HEAD
-        &--review {
-            @include mixins.mobile-body;
-            color: colors-variables.$secondary-color1;
-
-            @include mixins.tablet {
-                @include mixins.desk-tab-body;
-                color: colors-variables.$secondary-color1;
-            }
-        }
-    }
-=======
     }
     &__review {
         @include mixins.mobile-body;
@@ -73,7 +57,6 @@
             color: colors-variables.$secondary-color1;
             }
         }
->>>>>>> develop
     &__wrapper {
         width: 100%;
         margin-left: auto;

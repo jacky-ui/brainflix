@@ -41,11 +41,7 @@ body {
 }
 .comments__container {
   display: flex;
-<<<<<<< HEAD
-  justify-content: end;
-=======
   justify-content: flex-end;
->>>>>>> develop
 }
 .comments__container--name {
   font-family: "AvenirNext";
@@ -82,11 +78,7 @@ body {
     color: #AFAFAF;
   }
 }
-<<<<<<< HEAD
-.comments__container--review {
-=======
 .comments__review {
->>>>>>> develop
   font-family: "AvenirNext";
   font-size: 0.82rem;
   line-height: 1.12rem;
@@ -94,11 +86,7 @@ body {
   color: #000000;
 }
 @media screen and (min-width: 768px) {
-<<<<<<< HEAD
-  .comments__container--review {
-=======
   .comments__review {
->>>>>>> develop
     font-family: "AvenirNext";
     font-size: 0.87rem;
     line-height: 1.375rem;
