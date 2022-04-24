@@ -23,13 +23,13 @@
     &__logo {
         width: 7.5rem;
         height: 1.56rem;
-        // align-self: center;
         margin-bottom: 1rem;
         margin-left: auto;
         margin-right: auto;
 
         @include mixins.tablet{
             margin-bottom: unset;
+            margin-top: 0.5rem;
         }
     }
     &__input {
