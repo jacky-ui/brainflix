@@ -27,10 +27,10 @@ class HomePage extends Component {
                 });
             });
     }
-
+    // `http://localhost:8080/videos`
     componentDidMount() {
         axios
-            .get(`${API_URL}videos/${API_KEY}`)
+            .get(`http://localhost:8080/videos`)
             .then((response) => {
                 this.setState({
                     sideVideos: response.data
