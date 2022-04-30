@@ -10,21 +10,22 @@ function UploadPage(props) {
         event.preventDefault();
         console.log(event.target.title.value)
         axios
-            .post("http://localhost:8080/video", {
+            .post("http://localhost:8080/videos", {
                 title: event.target.title.value,
             });
         event.target.reset();
+        props.history.push("/");
     };
 
     const handleUserSubmit = (event) => {
         console.log(event.target)
-        // alert("Upload Successful! Click 'ok' to return!");
-        // props.history.push("/");
-    }
+        alert("Upload Successful! Click 'ok' to return!");
+        props.history.push("/");
+    };
 
     const handleUserCancel = (e) => {
         props.history.push("/")
-    }
+    };
 
     return (
         <article className="upload">
@@ -56,7 +57,7 @@ function UploadPage(props) {
                             placeholder='Add a description to your video'
                         />
                         <span className="upload__form--border"></span>
-                        <button type="submit" className="upload__form--submit" onClick={handleUserSubmit}>PUBLISH</button>
+                        <button className="upload__form--submit" onSubmit={handleUserSubmit}>PUBLISH</button>
                         <button className="upload__form--cancel" onClick={handleUserCancel}>CANCEL</button>
                         <img
                             className="icon__publish" 
