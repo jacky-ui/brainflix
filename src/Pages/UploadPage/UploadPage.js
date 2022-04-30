@@ -7,8 +7,9 @@ import { Redirect } from 'react-router-dom';
 function UploadPage(props) {
     const handleUserSubmit = (e) => {
         console.log(e.target)
-        alert("Upload Successful! Click 'ok' to return!")
-        props.history.push("/")
+        e.preventDefault();
+        alert("Upload Successful! Click 'ok' to return!");
+        props.history.push("/");
     }
 
     const handleUserCancel = (e) => {
@@ -43,7 +44,7 @@ function UploadPage(props) {
                             placeholder='Add a description to your video'
                         />
                         <span className="upload__form--border"></span>
-                        <button type="submit" className="upload__form--submit" onSubmit={handleUserSubmit}>PUBLISH</button>
+                        <button type="submit" className="upload__form--submit" onClick={handleUserSubmit}>PUBLISH</button>
                         <button className="upload__form--cancel" onClick={handleUserCancel}>CANCEL</button>
                         <img
                             className="icon__publish" 

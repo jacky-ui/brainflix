@@ -8,18 +8,18 @@ import VideoDescription from '../../component/VideoDescription/VideoDescription'
 import '../../styles/global.css';
 import './HomePage.scss';
 
-const API_URL="https://project-2-api.herokuapp.com/";
-const API_KEY="?api_key=834dc594-6ea9-4eb2-bcd8-7bb30109cbc3";
+const API_URL="http://localhost:8080";
+
 
 class HomePage extends Component {
     state = {
         sideVideos: [], //This will be used for the video list on the side
         selectedVideos: null
-    }
+    };
 
     getVideoDetails = (videoId) => {
         axios 
-            .get(`${API_URL}videos/${videoId}/${API_KEY}`)
+            .get(`${API_URL}/video/${videoId}`)
             .then((response) => {
                 const selectedData = response.data;
                 this.setState({
@@ -27,10 +27,10 @@ class HomePage extends Component {
                 });
             });
     }
-    // `http://localhost:8080/videos`
+   
     componentDidMount() {
         axios
-            .get(`http://localhost:8080/videos`)
+            .get(`${API_URL}/videos`)
             .then((response) => {
                 this.setState({
                     sideVideos: response.data
@@ -50,8 +50,6 @@ class HomePage extends Component {
             this.getVideoDetails(videoToBeSelected);
         }
     }
-
-    
 
     render () {
         if (!this.state.selectedVideos) {
@@ -83,7 +81,7 @@ class HomePage extends Component {
                         {commentLists.map(comment => {
                             return(
                                 <Comments 
-                                    key={comment.id}
+                                    key={comment.name}
                                     name={comment.name}
                                     timestamp={comment.timestamp}
                                     comment={comment.comment}
