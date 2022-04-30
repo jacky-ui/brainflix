@@ -3,13 +3,23 @@ import publishIcon from '../../assets/Icons/publish.svg';
 import './UploadPage.scss';
 import '../../styles/global.scss';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 function UploadPage(props) {
-    const handleUserSubmit = (e) => {
-        console.log(e.target)
-        e.preventDefault();
-        alert("Upload Successful! Click 'ok' to return!");
-        props.history.push("/");
+    const handleUserPost = (event) => {
+        event.preventDefault();
+        console.log(event.target.title.value)
+        axios
+            .post("http://localhost:8080/video", {
+                title: event.target.title.value,
+            });
+        event.target.reset();
+    };
+
+    const handleUserSubmit = (event) => {
+        console.log(event.target)
+        // alert("Upload Successful! Click 'ok' to return!");
+        // props.history.push("/");
     }
 
     const handleUserCancel = (e) => {
@@ -31,12 +41,14 @@ function UploadPage(props) {
                         />
                     </div>
 
-                    <form className="upload__form">
-                        <label className="upload__form--title">TITLE YOUR VIDEO</label>
+                    <form className="upload__form" onSubmit={handleUserPost}>
+                        <label className="upload__form--title" htmlFor='title'>TITLE YOUR VIDEO</label>
                         <input 
                             className="upload__form--text"
                             type="text"
                             placeholder='Add a title to your video'
+                            id="title"
+                            name="title"
                         />
                         <label className="upload__form--title">ADD A VIDEO DESCRIPTION</label>
                         <textarea 
