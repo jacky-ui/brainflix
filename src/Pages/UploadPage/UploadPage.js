@@ -2,17 +2,30 @@ import uploadPicture from '../../assets/Images/Upload-video-preview.jpg';
 import publishIcon from '../../assets/Icons/publish.svg';
 import './UploadPage.scss';
 import '../../styles/global.scss';
-import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 function UploadPage(props) {
-    const handleUserSubmit = (e) => {
-        alert("Upload Successful! Click 'ok' to return!")
-        props.history.push("/")
-    }
+    const handleUserPost = (event) => {
+        event.preventDefault();
+        console.log(event.target.title.value)
+        axios
+            .post("http://localhost:8080/videos", {
+                title: event.target.title.value,
+            });
+        event.target.reset();
+        alert("Upload Successful! Click 'ok' to return!");
+        props.history.push("/");
+    };
+
+    const handleUserSubmit = (event) => {
+        console.log(event.target)
+        alert("Upload Successful! Click 'ok' to return!");
+        props.history.push("/");
+    };
 
     const handleUserCancel = (e) => {
         props.history.push("/")
-    }
+    };
 
     return (
         <article className="upload">
@@ -29,12 +42,14 @@ function UploadPage(props) {
                         />
                     </div>
 
-                    <div className="upload__form">
-                        <label className="upload__form--title">TITLE YOUR VIDEO</label>
+                    <form className="upload__form" onSubmit={handleUserPost}>
+                        <label className="upload__form--title" htmlFor='title'>TITLE YOUR VIDEO</label>
                         <input 
                             className="upload__form--text"
                             type="text"
                             placeholder='Add a title to your video'
+                            id="title"
+                            name="title"
                         />
                         <label className="upload__form--title">ADD A VIDEO DESCRIPTION</label>
                         <textarea 
@@ -42,14 +57,14 @@ function UploadPage(props) {
                             placeholder='Add a description to your video'
                         />
                         <span className="upload__form--border"></span>
-                        <button type="submit" className="upload__form--submit" onClick={handleUserSubmit}>PUBLISH</button>
+                        <button className="upload__form--submit" onSubmit={handleUserSubmit}>PUBLISH</button>
                         <button className="upload__form--cancel" onClick={handleUserCancel}>CANCEL</button>
                         <img
                             className="icon__publish" 
                             src={publishIcon}
                             alt="publish icon"
                         />
-                    </div>
+                    </form>
                 </section>
             </section>
         </article>
