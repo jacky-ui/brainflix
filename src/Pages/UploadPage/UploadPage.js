@@ -2,7 +2,6 @@ import uploadPicture from '../../assets/Images/Upload-video-preview.jpg';
 import publishIcon from '../../assets/Icons/publish.svg';
 import './UploadPage.scss';
 import '../../styles/global.scss';
-import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 function UploadPage(props) {
@@ -14,6 +13,7 @@ function UploadPage(props) {
                 title: event.target.title.value,
             });
         event.target.reset();
+        alert("Upload Successful! Click 'ok' to return!");
         props.history.push("/");
     };
 
