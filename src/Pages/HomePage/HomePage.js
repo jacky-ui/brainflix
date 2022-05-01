@@ -40,6 +40,7 @@ class HomePage extends Component {
             .then(videoId => {
                 this.getVideoDetails(videoId);
             });
+            document.title="BrainFlix"
     };
 
     componentDidUpdate(prevProps, prevState) {
